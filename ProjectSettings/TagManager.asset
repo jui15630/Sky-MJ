@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Shell
   - Magazine
+  - Target
   layers:
   - Default
   - TransparentFX

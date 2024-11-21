@@ -11,10 +11,11 @@ public class Shell : MonoBehaviour
     public Text shellLabel;
     public Text magazineLabel;
 
-    public int Numberbullet = 0; // 初期弾数は0
-    public int maxBullets = 30; // 最大弾数
+    public int Numberbullet = 10; // 初期弾数は10
+    public int maxBullets = 10; // 最大所持弾数
     public int magazineCapacity = 10; // マガジン1つで補充される弾数
-    private int magazineCount = 0; // 所持マガジン数
+    public int maxMagazines = 3; // 所持できるマガジンの最大数
+    private int magazineCount = 0; // 現在のマガジン数
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +34,7 @@ public class Shell : MonoBehaviour
         {
             Reload();
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && magazineCount < maxMagazines)
         {
             PickupMagazine();
         }
@@ -41,14 +42,14 @@ public class Shell : MonoBehaviour
 
     void Shoot()
     {
-        GameObject Bullet = (GameObject)Instantiate(bullet, transform.position, Quaternion.Euler(transform.parent.eulerAngles.x, transform.parent.eulerAngles.y, 0));
+        GameObject Bullet = Instantiate(bullet, transform.position, Quaternion.Euler(transform.parent.eulerAngles.x, transform.parent.eulerAngles.y, 0));
         Rigidbody bulletRb = Bullet.GetComponent<Rigidbody>();
         bulletRb.AddForce(transform.forward * bulletSpeed);
         Destroy(Bullet, 0.5f);
 
         Rug = true;
         Invoke("ROG", 0.5f);
-        Numberbullet -= 1;
+        Numberbullet--;
         UpdateUI();
     }
 
@@ -66,7 +67,7 @@ public class Shell : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 2f))
         {
-            if (hit.collider.CompareTag("Magazine"))
+            if (hit.collider.CompareTag("Magazine") && magazineCount < maxMagazines)
             {
                 magazineCount++;
                 Destroy(hit.collider.gameObject); // マガジンオブジェクトを破壊
@@ -83,7 +84,7 @@ public class Shell : MonoBehaviour
     // UI更新メソッド
     private void UpdateUI()
     {
-        shellLabel.text = "砲弾：" + Numberbullet;
-        magazineLabel.text = "マガジン：" + magazineCount;
+        shellLabel.text = "残弾数: " + Numberbullet;
+        magazineLabel.text = "マガジン: " + magazineCount + " / " + maxMagazines;
     }
 }
