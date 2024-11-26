@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.AI;
 using Unity.VisualScripting;
 
-public class EnemyManager : MonoBehaviour
+public class EnemyManager : Singleton<EnemyManager>
 {
     [SerializeField] private int  maxHp;
     [SerializeField] private float speed;

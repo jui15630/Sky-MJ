@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ContinueManager : MonoBehaviour
+public class ContinueManager : Singleton<ContinueManager>
 {
     private void Start()
     {
@@ -15,7 +15,7 @@ public class ContinueManager : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1;  // タイムスケールを元に戻す
-        SceneManager.LoadScene("MainScene");  // メインシーンを再スタート
+        SceneManager.LoadScene("GameScene");  // メインシーンを再スタート
     }
 
     public void QuitGame()

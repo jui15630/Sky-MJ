@@ -5,26 +5,27 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(CharacterController))]
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager: Singleton<PlayerManager>
 {
-    public float walkingSpeed = 7.5f;
-    public float runningSpeed = 11.5f;
-    public float jumpSpeed = 8.0f;
-    public float gravity = 20.0f;
-    public Camera playerCamera;
-    public float lookSpeed = 2.0f;
-    public float lookXLimit = 45.0f;
 
-    public float maxStamina = 100f;
-    public float staminaDrain = 20f;
-    public float staminaRecovery = 10f;
-    public float staminaRecoveryDelay = 2f;
+    [SerializeField] private float walkingSpeed = 7.5f;
+    [SerializeField] private float runningSpeed = 11.5f;
+    [SerializeField] private float jumpSpeed = 8.0f;
+    [SerializeField] private float gravity = 20.0f;
+    [SerializeField] private Camera playerCamera;
+    [SerializeField] private float lookSpeed = 2.0f;
+    [SerializeField] private float lookXLimit = 45.0f;
+    [SerializeField] private float maxStamina = 100f;
+    [SerializeField] private float staminaDrain = 20f;
+    [SerializeField] private float staminaRecovery = 10f;
+    [SerializeField] private float staminaRecoveryDelay = 2f;
+    [SerializeField] private Slider staminaBar;
 
     private float currentStamina;
     private bool isRecoveringStamina;
     private float staminaRecoveryTimer;
 
-    public Slider staminaBar;
+    
 
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
