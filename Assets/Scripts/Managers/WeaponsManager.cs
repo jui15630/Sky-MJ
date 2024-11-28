@@ -11,7 +11,7 @@ public class WeaponsManager : Singleton<WeaponsManager>
 
     public enum WeaponID
     {
-        sampleWeapon, AR, SMG, SG
+        sampleWeapon,
     }
 
 }
