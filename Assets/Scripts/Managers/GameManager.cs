@@ -149,7 +149,7 @@ public class GameManager : Singleton<GameManager>
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // メインシーン以外ではカーソルを表示
-        if (scene.name != "MainScene")
+        if (scene.name != "GameScene")
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -165,7 +165,7 @@ public class GameManager : Singleton<GameManager>
     private void RestartGame()
     {
         Time.timeScale = 1;  // タイムスケールを元に戻す
-        SceneManager.LoadScene("MainScene");  // メインシーンを再スタート
+        SceneManager.LoadScene("GameScene");  // メインシーンを再スタート
     }
 
     private void QuitGame()
