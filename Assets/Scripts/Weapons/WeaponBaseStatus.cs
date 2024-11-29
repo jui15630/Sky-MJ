@@ -15,7 +15,7 @@ public class WeaponBaseStatus : ScriptableObject
     [SerializeField] private int rapidFire;　　　　 //連射力
     [SerializeField] private float range;           //射程距離
 
-    public WeaponsManager.WeaponID WeaponID { get { return WeaponID; } }
+    public WeaponsManager.WeaponID WeaponID { get { return weaponID; } }
     public int _numberBullet { get { return numberBullet; } }
     public int _maxBullets {  get { return maxBullets; } }
     public int _magazinCapacity {  get { return magazineCapacity; } }
