@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 6283519168086449670}
   - component: {fileID: 6283519168086449668}
   - component: {fileID: 5428871122486783502}
-  - component: {fileID: 5739501027860024562}
+  - component: {fileID: 6365935374807963860}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -392,7 +392,7 @@ MonoBehaviour:
   staminaRecoveryDelay: 2
   staminaBar: {fileID: 0}
   canMove: 1
---- !u!114 &5739501027860024562
+--- !u!114 &6365935374807963860
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -407,7 +407,5 @@ MonoBehaviour:
   GameManager: {fileID: 0}
   maxHealth: 2
   currentHealth: 0
-  healthImages:
-  - {fileID: 0}
-  - {fileID: 0}
+  healthImages: []
   invincibilityDuration: 5
