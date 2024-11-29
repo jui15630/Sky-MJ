@@ -124,7 +124,6 @@ public class GameManager : Singleton<GameManager>
 
         Time.timeScale = 0; // ゲームを停止する
 
-        // コンティニューシーンに移行
         SceneManager.LoadScene("ContinueScene");
     }
 
