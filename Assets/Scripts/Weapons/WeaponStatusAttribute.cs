@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "WeaponStatus",menuName = "SKYMJ_Game / Weapon Status")]
-public class WeaponBaseStatus : ScriptableObject
+public class WeaponStatusAttribute : ScriptableObject
 {
     [SerializeField] private WeaponsManager.WeaponID weaponID;
     [SerializeField] private int numberBullet;      //‰Šú’e”
