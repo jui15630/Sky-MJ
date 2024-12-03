@@ -7,7 +7,7 @@ using Unity.VisualScripting;
 
 public class EnemyManager : MonoBehaviour
 {
-    public Transform player;
+    [SerializeField] public Transform player;
     public float followDistance = 30.0f;
     public float wanderRadius = 10.0f;
     public float wanderTimer = 5.0f;
