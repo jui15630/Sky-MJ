@@ -5,45 +5,43 @@ using UnityEngine.UI;
 using UnityEngine.AI;
 using Unity.VisualScripting;
 
-public class EnemyManager : Singleton<EnemyManager>
+public class EnemyManager : MonoBehaviour
 {
-    [SerializeField] private int  maxHp;
-    [SerializeField] private float speed;
-    [SerializeField] private float wanderRadius;
-    [SerializeField] private float followDisrance;
-    [SerializeField] private float fixedYPosition;
-    [SerializeField] private float wanderTimer;
-    [SerializeField] private float fixedPosition;
-    [SerializeField] LayerMask obstacleLayer;
+    public Transform player;
+    public float followDistance = 30.0f;
+    public float wanderRadius = 10.0f;
+    public float wanderTimer = 5.0f;
+    public float fixedYPosition = 2.0f;
+    public LayerMask obstacleLayer;
+    public int damageAmount = 1; // プレイヤーに与えるダメージ量
 
-    private int currentHp;
-    private int damageAmount = 1;
-    private Transform player;
+    public AudioSource bgmSource; // BGMを再生するためのAudioSource
+    public AudioClip chaseBGM; // 追尾時に再生するBGM
 
-    private AudioSource bgmSource;
-    private AudioClip chaseBGM;
+    public int maxHealth = 20;
+    private int currentHealth;
 
     public Slider healthSlider; // HPバーのSlider
     public Canvas healthCanvas; // HPバーのCanvas
 
     private NavMeshAgent agent;
-    private bool isFollowing  = false;
+    private bool isFollowing = false;
     private float timer;
     private Vector3 wanderTarget;
     private bool isStoppedDueToCollision = false;
     private float stopTimer = 0f;
     private float stopDuration = 5f;
 
-    private void Start()
+    void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         timer = wanderTimer;
         wanderTarget = RandomWanderTarget();
-        currentHp = maxHp;
+        currentHealth = maxHealth;
         UpdateHealthBar();
     }
 
-    private void Update()
+    void Update()
     {
         if (isStoppedDueToCollision)
         {
@@ -59,7 +57,7 @@ public class EnemyManager : Singleton<EnemyManager>
 
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        if (distanceToPlayer <= followDisrance)
+        if (distanceToPlayer <= followDistance)
         {
             if (!isFollowing)
             {
@@ -186,8 +184,8 @@ public class EnemyManager : Singleton<EnemyManager>
 
     public void TakeDamage(int amount)
     {
-        currentHp -= amount;
-        if (currentHp <= 0)
+        currentHealth -= amount;
+        if (currentHealth <= 0)
         {
             Destroy(gameObject);
         }
@@ -201,7 +199,7 @@ public class EnemyManager : Singleton<EnemyManager>
     {
         if (healthSlider != null)
         {
-            healthSlider.value = (float)currentHp / maxHp;
+            healthSlider.value = (float)currentHealth / maxHealth;
         }
     }
 
@@ -221,5 +219,4 @@ public class EnemyManager : Singleton<EnemyManager>
             healthCanvas.transform.rotation = Quaternion.LookRotation(healthCanvas.transform.position - Camera.main.transform.position); // カメラを向くように回転
         }
     }
-
 }
