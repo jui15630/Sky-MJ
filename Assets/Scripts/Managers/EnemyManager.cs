@@ -7,22 +7,18 @@ using Unity.VisualScripting;
 
 public class EnemyManager : MonoBehaviour
 {
-    public Transform player;
-    public float followDistance = 30.0f;
-    public float wanderRadius = 10.0f;
-    public float wanderTimer = 5.0f;
-    public float fixedYPosition = 2.0f;
-    public LayerMask obstacleLayer;
-    public int damageAmount = 1; // プレイヤーに与えるダメージ量
-
-    public AudioSource bgmSource; // BGMを再生するためのAudioSource
-    public AudioClip chaseBGM; // 追尾時に再生するBGM
-
-    public int maxHealth = 20;
-    private int currentHealth;
-
-    public Slider healthSlider; // HPバーのSlider
-    public Canvas healthCanvas; // HPバーのCanvas
+    [SerializeField] private Transform player;
+    [SerializeField] private int maxHealth = 20;
+    [SerializeField] private float followDistance = 30.0f;
+    [SerializeField] private float wanderRadius = 10.0f;
+    [SerializeField] private float wanderTimer = 5.0f;
+    [SerializeField] private float fixedYPosition = 2.0f;
+    [SerializeField] private int damageAmount = 1; // プレイヤーに与えるダメージ量   
+    [SerializeField] private LayerMask obstacleLayer;
+    [SerializeField] private AudioSource bgmSource; // BGMを再生するためのAudioSource
+    [SerializeField] private AudioClip chaseBGM; // 追尾時に再生するBGM
+    [SerializeField] private Slider healthSlider; // HPバーのSlider
+    [SerializeField] private Canvas healthCanvas; // HPバーのCanvas
 
     private NavMeshAgent agent;
     private bool isFollowing = false;
@@ -31,6 +27,7 @@ public class EnemyManager : MonoBehaviour
     private bool isStoppedDueToCollision = false;
     private float stopTimer = 0f;
     private float stopDuration = 5f;
+    private int currentHealth;
 
     void Start()
     {
