@@ -31,6 +31,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2006353583010418197}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -106,6 +107,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2006353583825136054}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -181,6 +183,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2006353584463983584}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
@@ -255,6 +258,7 @@ RectTransform:
   m_Children:
   - {fileID: 2006353582704253866}
   m_Father: {fileID: 2006353584463983584}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
@@ -292,6 +296,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2006353584544147048}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -365,7 +370,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2006353583293823713}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -69.6, y: 2, z: -39.9}
   m_LocalScale: {x: 2, y: 2, z: 2}
@@ -373,6 +377,7 @@ Transform:
   m_Children:
   - {fileID: 2006353583950941622}
   m_Father: {fileID: 1880456898670131309}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2006353583293823722
 MeshFilter:
@@ -432,17 +437,8 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2006353583293823713}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -459,18 +455,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a085d0781375b4bbdc752881116a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  followDistance: 30
+  maxHp: 0
+  speed: 0
   wanderRadius: 30
-  wanderTimer: 3
+  followDisrance: 0
   fixedYPosition: 2
+  wanderTimer: 3
+  fixedPosition: 0
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 0
-  damageAmount: 1
-  bgmSource: {fileID: 2006353583293823720}
-  chaseBGM: {fileID: 8300000, guid: 413c5b7fc72a4444b839456c040c07e9, type: 3}
-  maxHealth: 20
   healthSlider: {fileID: 2006353584463983587}
   healthCanvas: {fileID: 2006353583950941621}
 --- !u!195 &2006353583293823726
@@ -622,6 +616,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2006353583497104926}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -696,6 +691,7 @@ RectTransform:
   m_Children:
   - {fileID: 2006353583345050670}
   m_Father: {fileID: 2006353583960961605}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -733,6 +729,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2006353583960961605}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
@@ -807,6 +804,7 @@ RectTransform:
   m_Children:
   - {fileID: 2006353582708225554}
   m_Father: {fileID: 2006353583960961605}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
@@ -846,6 +844,7 @@ RectTransform:
   m_Children:
   - {fileID: 2006353584463983584}
   m_Father: {fileID: 2006353583293823723}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -869,9 +868,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -948,6 +945,7 @@ RectTransform:
   - {fileID: 2006353583825136054}
   - {fileID: 2006353583497104926}
   m_Father: {fileID: 2006353584357004623}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1034,7 +1032,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2006353584159819893}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 14.3, y: 2, z: 56}
   m_LocalScale: {x: 2, y: 2, z: 2}
@@ -1042,6 +1039,7 @@ Transform:
   m_Children:
   - {fileID: 2006353584357004623}
   m_Father: {fileID: 1880456898670131309}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2006353584159819902
 MeshFilter:
@@ -1101,17 +1099,8 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2006353584159819893}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -1128,18 +1117,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a085d0781375b4bbdc752881116a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  followDistance: 30
+  maxHp: 0
+  speed: 0
   wanderRadius: 30
-  wanderTimer: 3
+  followDisrance: 0
   fixedYPosition: 2
+  wanderTimer: 3
+  fixedPosition: 0
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 0
-  damageAmount: 1
-  bgmSource: {fileID: 2006353584159819900}
-  chaseBGM: {fileID: 8300000, guid: 413c5b7fc72a4444b839456c040c07e9, type: 3}
-  maxHealth: 20
   healthSlider: {fileID: 2006353583960961602}
   healthCanvas: {fileID: 2006353584357004622}
 --- !u!195 &2006353584159819890
@@ -1293,6 +1280,7 @@ RectTransform:
   m_Children:
   - {fileID: 2006353583960961605}
   m_Father: {fileID: 2006353584159819903}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1316,9 +1304,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1395,6 +1381,7 @@ RectTransform:
   - {fileID: 2006353583010418197}
   - {fileID: 2006353584544147048}
   m_Father: {fileID: 2006353583950941622}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1482,6 +1469,7 @@ RectTransform:
   m_Children:
   - {fileID: 2006353583159868416}
   m_Father: {fileID: 2006353584463983584}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1511,7 +1499,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8266583034412367483}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1520,4 +1507,5 @@ Transform:
   - {fileID: 2006353584159819903}
   - {fileID: 2006353583293823723}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
