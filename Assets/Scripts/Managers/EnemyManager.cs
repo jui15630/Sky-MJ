@@ -97,6 +97,9 @@ public class EnemyManager : Singleton<EnemyManager>
         }
     }
 
+    /// <summary>
+    /// 置きかけられてる時のBGM
+    /// </summary>
     void StopChase()
     {
         if (bgmSource != null)
@@ -105,6 +108,9 @@ public class EnemyManager : Singleton<EnemyManager>
         }
     }
 
+    /// <summary>
+    /// プレイヤーの位置を取得
+    /// </summary>
     void FollowPlayer()
     {
         agent.SetDestination(player.position);

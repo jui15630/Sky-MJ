@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class sampleWeapon : MonoBehaviour
+public class sampleWeapon : BaseWeapon
 {
-    // Start is called before the first frame update
-    void Start()
+    public override WeaponsManager.WeaponID GetWeaponID()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return WeaponsManager.WeaponID.sampleWeapon;
     }
 }
