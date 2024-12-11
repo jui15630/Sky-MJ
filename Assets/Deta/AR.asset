@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e4a7fdbbc251864bb7ef319f9090690, type: 3}
   m_Name: AR
   m_EditorClassIdentifier: 
-  weaponID: 0
+  weaponID: 1
   numberBullet: 0
   maxBullets: 0
   magazineCapacity: 0
