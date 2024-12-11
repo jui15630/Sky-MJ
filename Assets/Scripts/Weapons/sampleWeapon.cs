@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static BaseWeapon;
 
-public class sampleWeapon : IBaseWeapon
+public class sampleWeapon : BaseWeapon
 {
     public override WeaponsManager.WeaponID GetWeaponID()
     {
