@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class WeaponsManager : Singleton<WeaponsManager>
 {
+    public WeaponBaseStatus _weaponBaseStatus = new WeaponBaseStatus();
+
     private void Awake()
     {
         
     }
 
+    /// <summary>
+    /// •Ší‚Ì”F¯ID‚Æ‚µ‚Äg—p
+    /// </summary>
     public enum WeaponID
     {
         sampleWeapon, AR, SMG, SG
