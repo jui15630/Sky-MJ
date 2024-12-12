@@ -60,7 +60,7 @@ public class EnemyManager : Singleton<EnemyManager>
         {
             if (!isFollowing)
             {
-                StartChase();
+                StartChaseBGM();
             }
             isFollowing = true;
         }
@@ -68,7 +68,7 @@ public class EnemyManager : Singleton<EnemyManager>
         {
             if (isFollowing)
             {
-                StopChase();
+                StopChaseBGM();
             }
             isFollowing = false;
         }
@@ -87,7 +87,7 @@ public class EnemyManager : Singleton<EnemyManager>
         UpdateHealthBarPosition();
     }
 
-    void StartChase()
+    void StartChaseBGM()
     {
         if (bgmSource != null && chaseBGM != null)
         {
@@ -97,12 +97,9 @@ public class EnemyManager : Singleton<EnemyManager>
         }
     }
 
-    /// <summary>
-    /// ’u‚«‚©‚¯‚ç‚ê‚Ä‚éŽž‚ÌBGM
-    /// </summary>
-    void StopChase()
+    void StopChaseBGM()
     {
-        if (bgmSource != null)
+        if(bgmSource != null)
         {
             bgmSource.Stop();
         }
