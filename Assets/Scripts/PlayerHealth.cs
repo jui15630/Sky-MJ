@@ -66,4 +66,17 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     }
+    public void AddHP(int amount)
+    {
+        // uamountv•ª‚¾‚¯HP‚ð‰ñ•œ‚³‚¹‚é
+        currentHealth += amount;
+
+        // Å‘åHPˆÈã‚É‚Í‰ñ•œ‚µ‚È‚¢‚æ‚¤‚É‚·‚éB
+        if (currentHealth > 2)
+        {
+            currentHealth = 2;
+        }
+
+        
+    }
 }
