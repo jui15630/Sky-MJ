@@ -2,39 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static WeaponsManager;
 
 public class Shell : MonoBehaviour
 {
+    [SerializeField] private WeaponBaseStatus weaponBaseStatus;
+    [SerializeField] private WeaponsManager.WeaponID weaponID;
+
     public GameObject bullet;
     public float bulletSpeed;
-    bool Rug = false;
     public Text shellLabel;
     public Text magazineLabel;
 
-    public int Numberbullet = 10; // èâä˙íeêîÇÕ10
-    public int maxBullets = 10; // ç≈ëÂèäéùíeêî
-    public int magazineCapacity = 10; // É}ÉKÉWÉì1Ç¬Ç≈ï‚è[Ç≥ÇÍÇÈíeêî
-    public int maxMagazines = 3; // èäéùÇ≈Ç´ÇÈÉ}ÉKÉWÉìÇÃç≈ëÂêî
-    private int magazineCount = 0; // åªç›ÇÃÉ}ÉKÉWÉìêî
+    private int currentBullets;
+    private int magazineCount;
+    private bool isReloading = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        currentBullets = weaponBaseStatus.GetNumberBullet(weaponID);
+        magazineCount = weaponBaseStatus.GetCurrentMagazine(weaponID);
         UpdateUI();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && Rug == false && Numberbullet > 0)
+        if (Input.GetMouseButtonDown(0) && !isReloading && currentBullets > 0)
         {
             Shoot();
         }
-        if (Input.GetKeyDown(KeyCode.R) && magazineCount > 0 && Numberbullet < maxBullets)
+        if (Input.GetKeyDown(KeyCode.R) && magazineCount > 0 && currentBullets < weaponBaseStatus.GetMaxBullet(weaponID))
         {
             Reload();
         }
-        if (Input.GetKeyDown(KeyCode.E) && magazineCount < maxMagazines)
+        if (Input.GetKeyDown(KeyCode.E))
         {
             PickupMagazine();
         }
@@ -42,22 +45,29 @@ public class Shell : MonoBehaviour
 
     void Shoot()
     {
-        GameObject Bullet = Instantiate(bullet, transform.position, Quaternion.Euler(transform.parent.eulerAngles.x, transform.parent.eulerAngles.y, 0));
-        Rigidbody bulletRb = Bullet.GetComponent<Rigidbody>();
+        // íeä€ê∂ê¨Ç∆î≠éÀ
+        GameObject bulletObj = Instantiate(bullet, transform.position, Quaternion.Euler(transform.parent.eulerAngles.x, transform.parent.eulerAngles.y, 0));
+        Rigidbody bulletRb = bulletObj.GetComponent<Rigidbody>();
         bulletRb.AddForce(transform.forward * bulletSpeed);
-        Destroy(Bullet, 0.5f);
+        Destroy(bulletObj, 0.5f);
 
-        Rug = true;
-        Invoke("ROG", 0.5f);
-        Numberbullet--;
+        currentBullets--;
         UpdateUI();
     }
 
     void Reload()
     {
-        int bulletsToReload = Mathf.Min(magazineCapacity, maxBullets - Numberbullet);
-        Numberbullet += bulletsToReload;
+        isReloading = true;
+
+        int maxBullets = weaponBaseStatus.GetMaxBullet(weaponID);
+        int magazineCapacity = weaponBaseStatus.GetMagazineCapacity(weaponID);
+
+        int bulletsToReload = Mathf.Min(magazineCapacity, maxBullets - currentBullets);
+
+        currentBullets += bulletsToReload;
         magazineCount--;
+        isReloading = false;
+
         UpdateUI();
     }
 
@@ -65,9 +75,10 @@ public class Shell : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
         RaycastHit hit;
+
         if (Physics.Raycast(ray, out hit, 2f))
         {
-            if (hit.collider.CompareTag("Magazine") && magazineCount < maxMagazines)
+            if (hit.collider.CompareTag("Magazine") && magazineCount < weaponBaseStatus.GetMaxMagazine(weaponID))
             {
                 magazineCount++;
                 Destroy(hit.collider.gameObject); // É}ÉKÉWÉìÉIÉuÉWÉFÉNÉgÇîjâÛ
@@ -76,15 +87,10 @@ public class Shell : MonoBehaviour
         }
     }
 
-    void ROG()
-    {
-        Rug = false;
-    }
-
     // UIçXêVÉÅÉ\ÉbÉh
     private void UpdateUI()
     {
-        shellLabel.text = "écíeêî: " + Numberbullet;
-        magazineLabel.text = "É}ÉKÉWÉì: " + magazineCount + " / " + maxMagazines;
+        shellLabel.text = "écíeêî: " + currentBullets;
+        magazineLabel.text = "É}ÉKÉWÉì: " + magazineCount + " / " + weaponBaseStatus.GetMaxMagazine(weaponID);
     }
 }

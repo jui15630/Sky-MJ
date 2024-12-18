@@ -8,6 +8,7 @@ public class Destroy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Shell")
         {
+
             GameManager.Instance.TargetDestroyed();
             Destroy(gameObject);
         }

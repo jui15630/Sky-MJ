@@ -8,7 +8,7 @@ public class WeaponsManager : Singleton<WeaponsManager>
 
     private void Awake()
     {
-        
+        Init();
     }
 
     /// <summary>
