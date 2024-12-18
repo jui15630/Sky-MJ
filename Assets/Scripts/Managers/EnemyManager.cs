@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
+using System.Globalization;
 
 public class EnemyManager : Singleton<EnemyManager>
 {
@@ -30,6 +31,8 @@ public class EnemyManager : Singleton<EnemyManager>
     private bool isStoppedDueToCollision = false;
     private float stopTimer = 0f;
     private float stopDuration = 5f;
+
+    public Text chaseText;
 
     void Start()
     {
@@ -61,6 +64,7 @@ public class EnemyManager : Singleton<EnemyManager>
             if (!isFollowing)
             {
                 StartChaseBGM();
+                ChaseText(true);
             }
             isFollowing = true;
         }
@@ -69,6 +73,7 @@ public class EnemyManager : Singleton<EnemyManager>
             if (isFollowing)
             {
                 StopChaseBGM();
+                ChaseText(false);
             }
             isFollowing = false;
         }
@@ -87,6 +92,8 @@ public class EnemyManager : Singleton<EnemyManager>
         UpdateHealthBarPosition();
     }
 
+
+
     void StartChaseBGM()
     {
         if (bgmSource != null && chaseBGM != null)
@@ -94,6 +101,22 @@ public class EnemyManager : Singleton<EnemyManager>
             bgmSource.clip = chaseBGM;
             bgmSource.Play();
             bgmSource.loop = true; // BGMをループする
+        }
+    }
+
+    void ChaseText(bool isActive)
+    {
+        if (chaseText != null)
+            {
+            if (isActive)
+            {
+                chaseText.text = "追いかけられている！";
+                chaseText.gameObject.SetActive(true);
+            }
+            else
+            {
+                chaseText.gameObject.SetActive(false);
+            }
         }
     }
 
@@ -105,6 +128,8 @@ public class EnemyManager : Singleton<EnemyManager>
         }
     }
 
+    
+    
     /// <summary>
     /// プレイヤーの位置を取得
     /// </summary>
