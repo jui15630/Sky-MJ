@@ -8,4 +8,4 @@ public class SMG : BaseWeapon
     {
         return WeaponsManager.WeaponID.SMG;
     }
-}
+}
