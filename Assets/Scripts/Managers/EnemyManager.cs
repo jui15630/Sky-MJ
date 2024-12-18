@@ -215,6 +215,7 @@ public class EnemyManager : Singleton<EnemyManager>
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
+            chaseText.gameObject.SetActive(false);
         }
         else
         {

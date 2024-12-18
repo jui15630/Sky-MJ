@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: WeaponStatus
   m_EditorClassIdentifier: 
   weaponID: 0
-  numberBullet: 10
-  maxBullets: 20
-  magazineCapacity: 10
+  numberBullet: 6
+  maxBullets: 12
+  magazineCapacity: 6
   maxMagazine: 3
   currentMagazin: 0
   attack: 1
-  rapidFire: 2
-  range: 15
+  rapidFire: 1
+  range: 7

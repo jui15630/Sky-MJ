@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: AR
   m_EditorClassIdentifier: 
   weaponID: 1
-  numberBullet: 30
-  maxBullets: 60
-  magazineCapacity: 3
-  maxMagazine: 4
+  numberBullet: 15
+  maxBullets: 30
+  magazineCapacity: 15
+  maxMagazine: 5
   currentMagazin: 0
   attack: 2
   rapidFire: 5

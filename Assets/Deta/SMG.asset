@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e4a7fdbbc251864bb7ef319f9090690, type: 3}
   m_Name: SMG
   m_EditorClassIdentifier: 
-  weaponID: 0
-  numberBullet: 0
-  maxBullets: 0
-  magazineCapacity: 0
-  maxMagazine: 0
+  weaponID: 3
+  numberBullet: 30
+  maxBullets: 60
+  magazineCapacity: 30
+  maxMagazine: 2
   currentMagazin: 0
-  attack: 0
-  rapidFire: 0
-  range: 0
+  attack: 1
+  rapidFire: 7
+  range: 10

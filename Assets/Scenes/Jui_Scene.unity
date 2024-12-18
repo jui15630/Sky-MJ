@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 3315821711488940387, guid: 98a15292595f3154fa5e74ef55f03597, type: 3}
     - target: {fileID: 3346969815742018153, guid: 03d14bed9ad7b7148a9f0c6026e7785f, type: 3}
       propertyPath: weaponID
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3346969815742018153, guid: 03d14bed9ad7b7148a9f0c6026e7785f, type: 3}
       propertyPath: shellLabel
@@ -166,7 +166,7 @@ PrefabInstance:
     - target: {fileID: 3346969815742018153, guid: 03d14bed9ad7b7148a9f0c6026e7785f, type: 3}
       propertyPath: weaponBaseStatus.weaponStatus.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: f249ccd649fe69b4c921366b50c00ecf, type: 2}
+      objectReference: {fileID: 11400000, guid: 2478e72cea5df70469706a12dcd8fb7f, type: 2}
     - target: {fileID: 3346969815742018153, guid: 03d14bed9ad7b7148a9f0c6026e7785f, type: 3}
       propertyPath: weaponBaseStatus.weaponStatus.Array.data[3]
       value: 
@@ -519,7 +519,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 884282632}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 884282632}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
