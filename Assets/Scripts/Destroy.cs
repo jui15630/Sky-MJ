@@ -31,5 +31,8 @@ public class Destroy : MonoBehaviour
         {
             objectText.gameObject.SetActive(false);
         }
+
+        
     }
+
 }
