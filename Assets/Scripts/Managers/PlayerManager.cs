@@ -25,8 +25,6 @@ public class PlayerManager: Singleton<PlayerManager>
     private bool isRecoveringStamina;
     private float staminaRecoveryTimer;
 
-    
-
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;

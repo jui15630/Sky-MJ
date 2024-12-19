@@ -5,27 +5,22 @@ using UnityEngine;
 public class HealingItem : MonoBehaviour
 {
     public GameObject effectPrefab;
-    private PlayerHealth playerHealth;
-    private int reward = 1;
-
-    void Start()
-    {
-        // 「Player」についている「PlayerHealth」スクリプトにアクセスする。
-        playerHealth = GameObject.Find("Player").GetComponent<PlayerHealth>();
-    }
 
     private void OnTriggerEnter(Collider other)
     {
-        // プレーヤーのShellで破壊するとHPが回復する
+        // プレーヤーのShellで破壊された場合
         if (other.gameObject.CompareTag("Shell"))
         {
-            
+            GameObject player = other.transform.root.gameObject;
 
-            // アイテムを画面から消す（破壊する）
+            PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+
+            if (playerHealth != null)
+            {
+                playerHealth.HealHP(1);
+            }
+
             Destroy(this.gameObject);
-
-            // プレーヤーのHPを自分が指定した量だけ回復させる
-            playerHealth.AddHP(reward);
         }
     }
 }
