@@ -8,11 +8,11 @@ public class PlayerHealth : MonoBehaviour
     public GameManager GameManager;
     public int maxHealth = 2;
     public int currentHealth;
-    public Image[] healthImages; // プレイヤーのヘルスを視覚的に示すイメージ画像
+    public Image[] healthImages;             // プレイヤーのヘルスを視覚的に示すイメージ画像
     public float invincibilityDuration = 5f; // 無敵状態の継続時間
 
-    private bool isInvincible = false; // 無敵状態かどうかを示すフラグ
-    private float invincibilityTimer = 0f; // 無敵状態のタイマー
+    private bool isInvincible = false;       // 無敵状態かどうかを示すフラグ
+    private float invincibilityTimer = 0f;   // 無敵状態のタイマー
 
     void Start()
     {
@@ -66,9 +66,8 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     }
-    public void AddHP(int amount)
+    public void HealHP(int amount)
     {
-        // 「amount」分だけHPを回復させる
         currentHealth += amount;
 
         // 最大HP以上には回復しないようにする。
