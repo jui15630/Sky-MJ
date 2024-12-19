@@ -165,9 +165,9 @@ public class EnemyManager : Singleton<EnemyManager>
     void FixPositionAndRotation()
     {
         // Yƒ|ƒWƒVƒ‡ƒ“‚ð2‚ÉŒÅ’è
-        Vector3 fixedPosition = transform.position;
-        fixedPosition.y = fixedYPosition;
-        transform.position = fixedPosition;
+        //Vector3 fixedPosition = transform.position;
+        //fixedPosition.y = fixedYPosition;
+        //transform.position = fixedPosition;
 
         // XŽ²‚Ì‰ñ“]‚ð0‚ÉŒÅ’è
         Quaternion fixedRotation = transform.rotation;
