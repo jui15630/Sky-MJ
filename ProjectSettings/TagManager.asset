@@ -8,6 +8,7 @@ TagManager:
   - Magazine
   - Target
   - recover
+  - Destroyable
   layers:
   - Default
   - TransparentFX

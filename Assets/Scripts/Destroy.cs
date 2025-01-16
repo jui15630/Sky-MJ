@@ -35,8 +35,5 @@ public class Destroy : MonoBehaviour
             objectText.gameObject.SetActive(true);
             Debug.Log("オブジェクトを検知");
         }
-
-        
     }
-
 }
