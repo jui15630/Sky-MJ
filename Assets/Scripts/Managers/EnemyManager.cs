@@ -47,7 +47,6 @@ public class EnemyManager : Singleton<EnemyManager>
     {
         agent = GetComponent<NavMeshAgent>();
         timer = wanderTimer;
-        wanderTarget = RandomWanderTarget();
         currentHealth = maxHp;
         UpdateHealthBar();
     }
@@ -62,6 +61,7 @@ public class EnemyManager : Singleton<EnemyManager>
                 isStoppedDueToCollision = false;
                 stopTimer = 0f;
                 agent.isStopped = false;
+                agent.updatePosition = true;
             }
             return;
         }
@@ -96,9 +96,9 @@ public class EnemyManager : Singleton<EnemyManager>
             Wander();
         }
 
-        FixPositionAndRotation();
         HandleObstacles();
         UpdateHealthBarPosition();
+        FixPositionAndRotation();
     }
 
 
@@ -199,6 +199,7 @@ public class EnemyManager : Singleton<EnemyManager>
 
     void OnCollisionEnter(Collision collision)
     {
+
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
@@ -243,6 +244,7 @@ public class EnemyManager : Singleton<EnemyManager>
     {
         isStoppedDueToCollision = true;
         agent.isStopped = true;
+        agent.updatePosition = false;
         stopDuration = seconds;
     }
 
