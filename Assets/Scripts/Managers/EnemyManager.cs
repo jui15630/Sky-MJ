@@ -8,12 +8,12 @@ using System.Globalization;
 public class EnemyManager : Singleton<EnemyManager>
 {
     [SerializeField] private Transform player;
-    [SerializeField] private int maxHp = 20;
-    [SerializeField] private float followDistance = 30.0f;
-    [SerializeField] private float wanderRadius = 10.0f;
-    [SerializeField] private float wanderTimer = 5.0f;
-    [SerializeField] private float fixedYPosition = 2.0f;
-    [SerializeField] private int damageAmount = 1; // プレイヤーに与えるダメージ量
+    [SerializeField] private int maxHp;
+    [SerializeField] private float followDistance;
+    [SerializeField] private float wanderRadius;
+    [SerializeField] private float wanderTimer;
+    [SerializeField] private float fixedYPosition;
+    [SerializeField] private int damageAmount; // プレイヤーに与えるダメージ量
     [SerializeField] private LayerMask obstacleLayer;
     [SerializeField] private AudioSource bgmSource; // BGMを再生するためのAudioSource
     [SerializeField] private AudioClip chaseBGM; // 追尾時に再生するBGM
@@ -164,7 +164,6 @@ public class EnemyManager : Singleton<EnemyManager>
 
     void FixPositionAndRotation()
     {
-        // Yポジションを2に固定
         Vector3 fixedPosition = transform.position;
         fixedPosition.y = fixedYPosition;
         transform.position = fixedPosition;
