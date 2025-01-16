@@ -17,6 +17,7 @@ public class Destroy : MonoBehaviour
         {
             GameManager.Instance.TargetDestroyed();
             Destroy(gameObject);
+            Destroy(objectText);
         }
     }
 
