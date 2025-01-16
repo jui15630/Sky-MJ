@@ -8,10 +8,7 @@ public class Destroy : MonoBehaviour
 {
     [SerializeField] private Transform Player;
     [SerializeField] private float detectionRange;
-    [SerializeField] private GameObject textPrefab;
-    private GameObject objectTextInstance;
-
-    private bool isObjectVisible = false;
+    [SerializeField] private Text objectText;
 
 
     void OnCollisionEnter(Collision collision)
@@ -19,7 +16,6 @@ public class Destroy : MonoBehaviour
         if (collision.gameObject.tag == "Shell")
         {
             GameManager.Instance.TargetDestroyed();
-            Destroy(textPrefab);
             Destroy(gameObject);
         }
     }
@@ -30,14 +26,16 @@ public class Destroy : MonoBehaviour
 
         if (distanceToPlayer > detectionRange)
         {
-            if (textPrefab.activeSelf) textPrefab.SetActive(false);
+            objectText.gameObject.SetActive(false);
+            Debug.Log("オブジェクトを検知していません");
         }
-        else
+        else if (distanceToPlayer < detectionRange)
         {
-            if (!textPrefab.activeSelf) textPrefab.SetActive(true);
+            objectText.gameObject.SetActive(true);
+            Debug.Log("オブジェクトを検知");
         }
 
-
+        
     }
 
 }

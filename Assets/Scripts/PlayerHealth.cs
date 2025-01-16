@@ -70,7 +70,6 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth += amount;
 
-        // Å‘åHPˆÈã‚É‚Í‰ñ•œ‚µ‚È‚¢‚æ‚¤‚É‚·‚éB
         if (currentHealth > 2)
         {
             currentHealth = 2;
