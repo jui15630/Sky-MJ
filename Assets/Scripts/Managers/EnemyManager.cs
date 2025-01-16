@@ -12,7 +12,7 @@ public class EnemyManager : Singleton<EnemyManager>
     [SerializeField] private float followDistance = 30.0f;
     [SerializeField] private float wanderRadius = 10.0f;
     [SerializeField] private float wanderTimer = 5.0f;
-    [SerializeField] private float fixedYPosition = 2.0f;
+    [SerializeField] private float fixedYPosition = 0.0f;
     [SerializeField] private int damageAmount = 1; // プレイヤーに与えるダメージ量
     [SerializeField] private LayerMask obstacleLayer;
     [SerializeField] private AudioSource bgmSource; // BGMを再生するためのAudioSource
