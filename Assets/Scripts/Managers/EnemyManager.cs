@@ -8,21 +8,12 @@ using System.Globalization;
 public class EnemyManager : Singleton<EnemyManager>
 {
     [SerializeField] private Transform player;
-<<<<<<< HEAD
-    [SerializeField] private int maxHp = 20;
-    [SerializeField] private float followDistance = 30.0f;
-    [SerializeField] private float wanderRadius = 10.0f;
-    [SerializeField] private float wanderTimer = 5.0f;
-    [SerializeField] private float fixedYPosition = 0.0f;
-    [SerializeField] private int damageAmount = 1; // プレイヤーに与えるダメージ量
-=======
     [SerializeField] private int maxHp;
     [SerializeField] private float followDistance;
     [SerializeField] private float wanderRadius;
     [SerializeField] private float wanderTimer;
     [SerializeField] private float fixedYPosition;
     [SerializeField] private int damageAmount; // プレイヤーに与えるダメージ量
->>>>>>> origin/main
     [SerializeField] private LayerMask obstacleLayer;
     [SerializeField] private AudioSource bgmSource; // BGMを再生するためのAudioSource
     [SerializeField] private AudioClip chaseBGM; // 追尾時に再生するBGM
@@ -47,6 +38,7 @@ public class EnemyManager : Singleton<EnemyManager>
     {
         agent = GetComponent<NavMeshAgent>();
         timer = wanderTimer;
+        wanderTarget = RandomWanderTarget();
         currentHealth = maxHp;
         UpdateHealthBar();
     }
@@ -61,7 +53,6 @@ public class EnemyManager : Singleton<EnemyManager>
                 isStoppedDueToCollision = false;
                 stopTimer = 0f;
                 agent.isStopped = false;
-                agent.updatePosition = true;
             }
             return;
         }
@@ -96,9 +87,9 @@ public class EnemyManager : Singleton<EnemyManager>
             Wander();
         }
 
+        FixPositionAndRotation();
         HandleObstacles();
         UpdateHealthBarPosition();
-        FixPositionAndRotation();
     }
 
 
@@ -199,7 +190,6 @@ public class EnemyManager : Singleton<EnemyManager>
 
     void OnCollisionEnter(Collision collision)
     {
-
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
@@ -244,7 +234,6 @@ public class EnemyManager : Singleton<EnemyManager>
     {
         isStoppedDueToCollision = true;
         agent.isStopped = true;
-        agent.updatePosition = false;
         stopDuration = seconds;
     }
 
