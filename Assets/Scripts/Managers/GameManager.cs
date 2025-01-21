@@ -110,6 +110,8 @@ public class GameManager : Singleton<GameManager>
         }
 
         Time.timeScale = 0; // ƒQ[ƒ€‚ğ’â~‚·‚é
+
+        SceneManager.LoadScene("ResultScene");
     }
 
     public void GameOver()
