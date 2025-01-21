@@ -393,7 +393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &563089314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1098,6 +1098,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -180
       objectReference: {fileID: 0}
+    - target: {fileID: 2905459354618772625, guid: b143fef233c42d84da54d490b2808e1c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2905459354618772625, guid: b143fef233c42d84da54d490b2808e1c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3035073711516576687, guid: b143fef233c42d84da54d490b2808e1c, type: 3}
       propertyPath: maxHp
       value: 300
@@ -1130,6 +1138,10 @@ PrefabInstance:
       propertyPath: chaseText
       value: 
       objectReference: {fileID: 1729837383}
+    - target: {fileID: 7089113115960996535, guid: b143fef233c42d84da54d490b2808e1c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8266583034412367483, guid: b143fef233c42d84da54d490b2808e1c, type: 3}
       propertyPath: m_Name
       value: AllEnmey
