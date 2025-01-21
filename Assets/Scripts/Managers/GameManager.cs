@@ -101,13 +101,13 @@ public class GameManager : Singleton<GameManager>
 
     private void GameClear()
     {
-        Debug.Log("Game Clear!");
-        gameEnded = true;
+       // Debug.Log("Game Clear!");
+       // gameEnded = true;
 
-        if (clearText != null)
-        {
-            clearText.gameObject.SetActive(true);
-        }
+       // if (clearText != null)
+       // {
+       //     clearText.gameObject.SetActive(true);
+       // }
 
         Time.timeScale = 0; // ÉQÅ[ÉÄÇí‚é~Ç∑ÇÈ
 

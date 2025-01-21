@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlayScene/ContinueScene.unity
     guid: 7ca919476d362c84ea6835dac22f3f77
+  - enabled: 1
+    path: Assets/Scenes/PlayScene/ResultScene.unity
+    guid: 186d3d1be0b18014c89cb43ae2f57dc1
   m_configObjects: {}
