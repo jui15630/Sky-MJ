@@ -99,17 +99,20 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    private void GameClear()
+    public void GameClear()
     {
-       // Debug.Log("Game Clear!");
-       // gameEnded = true;
+        // Debug.Log("Game Clear!");
+        // gameEnded = true;
 
-       // if (clearText != null)
-       // {
-       //     clearText.gameObject.SetActive(true);
-       // }
+        // if (clearText != null)
+        // {
+        //     clearText.gameObject.SetActive(true);
+        // }
 
         Time.timeScale = 0; // ÉQÅ[ÉÄÇí‚é~Ç∑ÇÈ
+
+        PlayerPrefs.SetFloat("FinalTime", timer);
+        PlayerPrefs.Save(); // ï€ë∂èàóù
 
         SceneManager.LoadScene("ResultScene");
     }

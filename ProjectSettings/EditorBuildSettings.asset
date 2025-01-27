@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/PlayScene/Gameintro.unity
     guid: 9c2335dc500fffd4ab5f2e16d50d322b
   - enabled: 1
-    path: Assets/Scenes/PlayScene/GameScene.unity
-    guid: 6bdd72d69d74a6545826be7917a4a051
+    path: Assets/Scenes/Jui_Scene.unity
+    guid: 21e4ab1c8ff7cfd4c84fac122bde34fc
   - enabled: 1
     path: Assets/Scenes/PlayScene/ContinueScene.unity
     guid: 7ca919476d362c84ea6835dac22f3f77
