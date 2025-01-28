@@ -8,6 +8,6 @@ public class NextScean : MonoBehaviour
     public void StartButton()
     {
         Time.timeScale = 1;  // タイムスケールを元に戻す
-        SceneManager.LoadScene("Jui_Scene");
+        SceneManager.LoadScene("GameScene");
     }
 }
